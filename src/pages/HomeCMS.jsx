@@ -348,7 +348,7 @@ const HomeCMS = () => {
                           {shorten(el.imgUrl)}
                         </td>
                         <td>{el.Category?.name}</td>
-                        <td>Rp {el.price}</td>
+                        <td>{el.price}</td>
                         <td>{el.User?.username}</td>
                         <td>{formatDate(el.updatedAt)}</td>
                         <td>{formatDate(el.createdAt)}</td>
