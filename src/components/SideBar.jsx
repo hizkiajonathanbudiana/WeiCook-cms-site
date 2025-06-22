@@ -43,7 +43,7 @@ const Sidebar = () => {
             href="https://wei-cook-public.vercel.app/"
             className="nav-link  text-white"
           >
-            Pubic Site
+            Public Site
           </a>
         </li>
         <li className="nav-item">
