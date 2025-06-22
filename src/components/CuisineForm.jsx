@@ -55,7 +55,7 @@ const CuisineForm = () => {
 
     (async () => {
       try {
-        await axios.get("http://hizkiajonathanbudiana.my.id/auth/me", {
+        await axios.get("https://hizkiajonathanbudiana.my.id/auth/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -71,7 +71,7 @@ const CuisineForm = () => {
         }
 
         const catRes = await axios.get(
-          "http://hizkiajonathanbudiana.my.id/pub/categories",
+          "https://hizkiajonathanbudiana.my.id/pub/categories",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -81,7 +81,7 @@ const CuisineForm = () => {
         // conditional if edit form
         if (isEdit) {
           const cuisRes = await axios.get(
-            `http://hizkiajonathanbudiana.my.id/cuisines/${id}`,
+            `https://hizkiajonathanbudiana.my.id/cuisines/${id}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           const data = cuisRes.data.postDetails || {};
@@ -127,7 +127,7 @@ const CuisineForm = () => {
     try {
       if (isEdit) {
         await axios.put(
-          `http://hizkiajonathanbudiana.my.id/cuisines/${id}`,
+          `https://hizkiajonathanbudiana.my.id/cuisines/${id}`,
           formInput,
           {
             headers: { Authorization: `Bearer ${token}` },
@@ -140,7 +140,7 @@ const CuisineForm = () => {
         fd.append("price", formInput.price);
         fd.append("categoryId", formInput.categoryId);
         fd.append("image", formInput.image);
-        await axios.post("http://hizkiajonathanbudiana.my.id/cuisines", fd, {
+        await axios.post("https://hizkiajonathanbudiana.my.id/cuisines", fd, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "multipart/form-data",
@@ -239,7 +239,7 @@ const CuisineForm = () => {
                 onChange={handleChange}
                 className="form-control"
                 required
-                placeholder="https://..."
+                placeholder="httpss://..."
               />
             </div>
           ) : (

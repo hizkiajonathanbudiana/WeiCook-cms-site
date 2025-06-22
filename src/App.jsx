@@ -1,5 +1,6 @@
 import { RouterProvider } from "react-router";
 import router from "./routers/routers";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
