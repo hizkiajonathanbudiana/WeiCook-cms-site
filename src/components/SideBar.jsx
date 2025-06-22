@@ -39,6 +39,14 @@ const Sidebar = () => {
       <h4 className="mb-4">WeiCook</h4>
       <ul className="nav flex-column mb-4">
         <li className="nav-item">
+          <a
+            href="https://wei-cook-public.vercel.app/"
+            className="nav-link btn btn-link text-white"
+          >
+            Public Site
+          </a>
+        </li>
+        <li className="nav-item">
           <button
             className="nav-link btn btn-link text-white"
             onClick={() => navigate("/homecms")}
