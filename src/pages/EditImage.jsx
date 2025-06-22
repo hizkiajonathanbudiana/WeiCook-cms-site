@@ -18,7 +18,7 @@ const EditImage = () => {
     const checkAccess = async () => {
       try {
         await axios.patch(
-          `http://hizkiajonathanbudiana.my.id/cuisines/${id}`,
+          `https://hizkiajonathanbudiana.my.id/cuisines/${id}`,
           {},
           {
             headers: {
@@ -61,7 +61,7 @@ const EditImage = () => {
       fd.append("image", imageFile);
 
       await axios.patch(
-        `http://hizkiajonathanbudiana.my.id/cuisines/${id}`,
+        `https://hizkiajonathanbudiana.my.id/cuisines/${id}`,
         fd,
         {
           headers: {

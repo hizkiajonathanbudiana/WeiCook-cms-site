@@ -55,7 +55,7 @@ const AddUser = () => {
           navigate("/login");
         }
 
-        await axios.get("http://hizkiajonathanbudiana.my.id/auth/me", {
+        await axios.get("https://hizkiajonathanbudiana.my.id/auth/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -95,7 +95,7 @@ const AddUser = () => {
 
       setIsLoading(true);
       await axios.post(
-        `http://hizkiajonathanbudiana.my.id/register`,
+        `https://hizkiajonathanbudiana.my.id/register`,
         formInput,
         {
           headers: { Authorization: `Bearer ${token}` },

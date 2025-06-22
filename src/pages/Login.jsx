@@ -41,7 +41,7 @@ const Login = () => {
       console.log("email & Password", email, password);
 
       const { data } = await axios.post(
-        "http://localhost:3000/login",
+        "https://hizkiajonathanbudiana.my.id/login",
         {
           email,
           password,
@@ -59,6 +59,8 @@ const Login = () => {
       showToast("Welcome Back", "success");
       navigate("/homecms");
     } catch (error) {
+      console.log(error?.response);
+
       showToast(error?.response?.data?.error);
     }
   };

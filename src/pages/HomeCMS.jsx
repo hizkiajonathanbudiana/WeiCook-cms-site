@@ -59,7 +59,7 @@ const HomeCMS = () => {
       const token = localStorage.getItem("token");
 
       const { data: user } = await axios.get(
-        "http://hizkiajonathanbudiana.my.id/auth/me",
+        "https://hizkiajonathanbudiana.my.id/auth/me",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -75,7 +75,7 @@ const HomeCMS = () => {
       setRoleUser(user.user.role);
 
       const { data } = await axios.get(
-        `http://hizkiajonathanbudiana.my.id/cuisines?search=${formInput.search}&filter=${formInput.filter}&page=${currentPage}&sort=${formInput.sort}`,
+        `https://hizkiajonathanbudiana.my.id/cuisines?search=${formInput.search}&filter=${formInput.filter}&page=${currentPage}&sort=${formInput.sort}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -84,7 +84,12 @@ const HomeCMS = () => {
       );
 
       const { data: dataCategories } = await axios.get(
-        "http://hizkiajonathanbudiana.my.id/categories"
+        "https://hizkiajonathanbudiana.my.id/categories",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
 
       setCuisines(data.data);
@@ -125,7 +130,7 @@ const HomeCMS = () => {
           throw new Error("DELETE");
         }
         await axios.delete(
-          `http://hizkiajonathanbudiana.my.id/cuisines/${id}`,
+          `https://hizkiajonathanbudiana.my.id/cuisines/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -202,7 +207,7 @@ const HomeCMS = () => {
       fd.append("image", uploadFile);
 
       await axios.patch(
-        `http://hizkiajonathanbudiana.my.id/cuisines/${uploadingId}`,
+        `https://hizkiajonathanbudiana.my.id/cuisines/${uploadingId}`,
         fd,
         {
           headers: {

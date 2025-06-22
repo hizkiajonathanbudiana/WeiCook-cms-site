@@ -52,14 +52,14 @@ const CategoriesPage = () => {
 
       const token = localStorage.getItem("token");
 
-      await axios.get("http://hizkiajonathanbudiana.my.id/auth/me", {
+      await axios.get("https://hizkiajonathanbudiana.my.id/auth/me", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
       const { data } = await axios.get(
-        "http://hizkiajonathanbudiana.my.id/categories",
+        "https://hizkiajonathanbudiana.my.id/categories",
         {
           headers: {
             Authorization: `Bearer ${token}`,
