@@ -5,6 +5,7 @@ import Sidebar from "../components/SideBar";
 import ButtonReuse from "../components/ButtonReuse";
 // import Toastify from "toastify-js";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const HomeCMS = () => {
   const [cuisines, setCuisines] = useState([]);
