@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Sidebar from "../components/SideBar";
 import ButtonReuse from "../components/ButtonReuse";
 import Toastify from "toastify-js";
+import "react-toastify/dist/ReactToastify.css";
 
 const HomeCMS = () => {
   const [cuisines, setCuisines] = useState([]);
