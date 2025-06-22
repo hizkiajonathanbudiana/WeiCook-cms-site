@@ -48,6 +48,7 @@ const HomeCMS = () => {
         color: textColor,
         border: `1px solid ${borderColor}`,
         boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+        zIndex: 9999,
       },
     }).showToast();
   };
