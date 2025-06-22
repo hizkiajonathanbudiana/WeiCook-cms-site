@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Sidebar from "../components/SideBar";
 import ButtonReuse from "../components/ButtonReuse";
-// import Toastify from "toastify-js";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Toastify from "toastify-js";
 
 const HomeCMS = () => {
   const [cuisines, setCuisines] = useState([]);
@@ -36,12 +34,15 @@ const HomeCMS = () => {
     const textColor =
       type === "success" ? "rgba(31, 161, 61, 0.95)" : "rgba(255, 0, 0, 0.95)";
 
-    toast(message, {
-      position: "bottom-left",
-      autoClose: 3000,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
+    Toastify({
+      text: message,
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "bottom",
+      position: "left",
+      stopOnFocus: true,
       style: {
         background: bg,
         color: textColor,
@@ -49,7 +50,7 @@ const HomeCMS = () => {
         boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
         zIndex: 9999,
       },
-    });
+    }).showToast();
   };
 
   const fetchDataCuisines = async () => {
