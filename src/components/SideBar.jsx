@@ -41,9 +41,9 @@ const Sidebar = () => {
         <li className="nav-item">
           <a
             href="https://wei-cook-public.vercel.app/"
-            className="nav-link btn btn-link text-white"
+            className="nav-link  text-white"
           >
-            Public Site
+            Pubic Site
           </a>
         </li>
         <li className="nav-item">
