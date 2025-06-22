@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Toastify from "toastify-js";
+import "react-toastify/dist/ReactToastify.css";
 
 const CuisineForm = () => {
   const { id } = useParams();

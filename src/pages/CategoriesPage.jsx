@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Sidebar from "../components/SideBar";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
+import "react-toastify/dist/ReactToastify.css";
 
 const CategoriesPage = () => {
   const navigate = useNavigate();
