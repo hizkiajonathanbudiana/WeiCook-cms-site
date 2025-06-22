@@ -96,7 +96,7 @@ const Login = () => {
               </button>
             </form>
             <div className="text-center mt-3">
-              <a href="./index.html" className="small">
+              <a href="https://wei-cook-public.vercel.app/" className="small">
                 ← Back to Menu List
               </a>
             </div>
