@@ -138,7 +138,7 @@ const HomeCMS = () => {
             },
           }
         );
-        showToast(`Success deleted post id ${id}`);
+        showToast(`Success deleted post id ${id}`, "success");
         fetchDataCuisines();
       }
 

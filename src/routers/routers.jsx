@@ -4,7 +4,6 @@ import HomeCMS from "../pages/HomeCMS";
 import AddCuisine from "../pages/AddCuisine";
 import EditCuisine from "../pages/EditCuisine";
 import AddUser from "../pages/AddUser";
-import EditImage from "../pages/EditImage";
 import CategoriesPage from "../pages/CategoriesPage";
 import Toastify from "toastify-js";
 //
@@ -85,16 +84,7 @@ const Router = createBrowserRouter([
       }
     },
   },
-  {
-    path: "/cuisines/upload/:id",
-    element: <EditImage />,
-    loader: () => {
-      if (!localStorage.token) {
-        showToast("Please login first");
-        return redirect("/");
-      }
-    },
-  },
+
   {
     path: "/categories",
     element: <CategoriesPage />,

@@ -85,6 +85,8 @@ const CategoriesPage = () => {
     fetchData();
   }, []);
 
+  const formatDate = (date) => new Date(date).toISOString().split("T")[0];
+
   return (
     <>
       <div className="d-flex">
@@ -122,8 +124,8 @@ const CategoriesPage = () => {
                       <tr>
                         <td>{el.id}</td>
                         <td>{el.name}</td>
-                        <td>{el.updatedAt}</td>
-                        <td>{el.createdAt}</td>
+                        <td>{formatDate(el.updatedAt)}</td>
+                        <td>{formatDate(el.createdAt)}</td>
                       </tr>
                     ))}
                   </tbody>

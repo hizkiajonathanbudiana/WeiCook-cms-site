@@ -147,21 +147,25 @@ const CuisineForm = () => {
           },
         });
       }
-    } catch (error) {
-      showToast(error.response?.data?.error);
 
-      if (error.response) {
-        console.error("Status:", error.response.status);
-        console.error("Response data:", error.response.data);
-      } else {
-        console.error(error);
-      }
-    } finally {
       isEdit
         ? showToast("Success Edit", "success")
         : showToast("Success Add", "success");
       setIsLoading(false);
       navigate("/homecms");
+    } catch (error) {
+      setIsLoading(false);
+
+      if (Array.isArray(error.response?.data?.error)) {
+        error.response?.data?.error.map((error) => {
+          showToast(error);
+        });
+      } else {
+        showToast(error.response?.data?.error);
+      }
+
+      console.error("Status:", error.response.status);
+      console.error("Response data:", error.response.data);
     }
   };
 
@@ -178,7 +182,6 @@ const CuisineForm = () => {
               value={formInput.name}
               onChange={handleChange}
               className="form-control"
-              required
               placeholder="e.g. Nasi Goreng"
             />
           </div>
@@ -191,7 +194,6 @@ const CuisineForm = () => {
               onChange={handleChange}
               className="form-control"
               rows="3"
-              required
               placeholder="Describe the cuisine"
             />
           </div>
@@ -204,9 +206,7 @@ const CuisineForm = () => {
               value={formInput.price}
               onChange={handleChange}
               className="form-control"
-              required
               placeholder="e.g. 75000"
-              min={1000}
             />
           </div>
 
@@ -217,7 +217,6 @@ const CuisineForm = () => {
               value={formInput.categoryId}
               onChange={handleChange}
               className="form-select"
-              required
             >
               <option value="" disabled>
                 Choose…
@@ -238,7 +237,6 @@ const CuisineForm = () => {
                 value={formInput.imgUrl}
                 onChange={handleChange}
                 className="form-control"
-                required
                 placeholder="httpss://..."
               />
             </div>
@@ -250,7 +248,6 @@ const CuisineForm = () => {
                 type="file"
                 onChange={handleChange}
                 className="form-control"
-                required
               />
             </div>
           )}
