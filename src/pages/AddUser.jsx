@@ -101,15 +101,14 @@ const AddUser = () => {
           headers: { Authorization: `Bearer ${token}` },
         }
       );
+      setIsLoading(false);
 
+      showToast("Success Add User", "success");
       navigate("/homecms");
     } catch (error) {
       setIsLoading(false);
 
       error?.response?.data?.error.map((el) => showToast(el));
-    } finally {
-      showToast("Success Add User", "success");
-      setIsLoading(false);
     }
   };
 
