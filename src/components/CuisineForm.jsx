@@ -62,7 +62,7 @@ const CuisineForm = () => {
         });
 
         if (
-          isEdit &&
+          !isEdit &&
           localStorage.getItem("id") !== id &&
           localStorage.getItem("role").toLocaleLowerCase() !== "admin"
         ) {
