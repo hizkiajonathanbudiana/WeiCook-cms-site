@@ -62,8 +62,7 @@ const CuisineForm = () => {
         });
 
         if (
-          !isEdit &&
-          localStorage.getItem("id") !== id &&
+          isEdit &&
           localStorage.getItem("role").toLocaleLowerCase() !== "admin"
         ) {
           showToast("Not authorized");
